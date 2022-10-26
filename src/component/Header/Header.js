@@ -32,7 +32,12 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">toggle</a>
+                    {/* <a className="btn">toggle</a> */}
+                    <label className="swap">
+                        <input type="checkbox" />
+                        <div className="swap-on">ON</div>
+                        <div className="swap-off">OFF</div>
+                    </label>
                 </div>
             </div>
         </div>

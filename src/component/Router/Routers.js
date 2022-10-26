@@ -41,6 +41,10 @@ const Routers = () => {
                 //     element: <Cart></Cart>
                 // }
             ]
+        },
+        {
+            path: '*',
+            element: <div><h1 className='text-5xl'>4O4 page</h1></div>
         }
     ])
     return (
