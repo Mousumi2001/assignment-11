@@ -44,7 +44,7 @@ const Routers = () => {
         },
         {
             path: '*',
-            element: <div><h1 className='text-5xl'>4O4 page</h1></div>
+            element: <div className='flex justify-center pt-48'><h1 className='text-8xl'>4O4 page</h1></div>
         }
     ])
     return (
