@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from '../../layout/Main';
 import Blog from '../Blog/Blog';
+import Cart from '../Cart/Cart';
 import Courses from '../Courses/Courses';
 import FAQ from '../FAQ/FAQ';
 import Register from '../Register/Register';
@@ -35,6 +36,10 @@ const Routers = () => {
                     path: '/register',
                     element: <Register></Register>
                 },
+                // {
+                //     path: '/courses/:id',
+                //     element: <Cart></Cart>
+                // }
             ]
         }
     ])

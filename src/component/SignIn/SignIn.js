@@ -1,12 +1,13 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../UserContext/UserContext';
 
 const SignIn = () => {
 
-    const { signIn, googleSign } = useContext(AuthContext);
+    const { signIn, googleSign, githubSign } = useContext(AuthContext);
     const provider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handlSubmit = event => {
         event.preventDefault()
@@ -32,13 +33,21 @@ const SignIn = () => {
             .catch(error => console.error(error))
     }
 
+    const handlGithub = () => {
+        githubSign(githubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => console.error(error))
+    }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col ">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Please Register now!</h1>
-
+                        <h1 className="text-5xl font-bold">Please SignIn now!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handlSubmit} className="card-body">
@@ -60,6 +69,7 @@ const SignIn = () => {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                             <button onClick={handlGoogle} className="btn btn-outline btn-info">SignIn With Google</button>
+                            <button onClick={handlGithub} className="btn btn-outline btn-info">SignIn With Github</button>
 
                         </form>
                     </div>

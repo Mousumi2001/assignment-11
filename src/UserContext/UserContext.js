@@ -23,7 +23,11 @@ const UserContext = ({ children }) => {
         signInWithPopup(auth, provider)
     }
 
-    const value = { user, createUser, signIn, googleSign }
+    const githubSign = (provider) => {
+        signInWithPopup(auth, provider)
+    }
+
+    const value = { user, createUser, signIn, googleSign, githubSign }
     return (
         < div >
             <AuthContext.Provider value={value}>
