@@ -1,10 +1,11 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../UserContext/UserContext';
 
 const SignIn = () => {
-
+    const [error, setError] = useState('');
     const { signIn, googleSign, githubSign } = useContext(AuthContext);
     const provider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -19,9 +20,13 @@ const SignIn = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                setError('')
                 console.log(user)
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+            })
     }
 
     const handlGoogle = () => {
@@ -65,6 +70,7 @@ const SignIn = () => {
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" />
 
                             </div>
+                            {error}
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>
                             </div>

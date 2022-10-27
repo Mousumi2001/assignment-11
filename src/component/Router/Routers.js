@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from '../../layout/Main';
+import PrivateRouter from '../../PrivateRouter/PrivateRouter';
 import Blog from '../Blog/Blog';
 import Cart from '../Cart/Cart';
 import Courses from '../Courses/Courses';
@@ -26,7 +27,7 @@ const Routers = () => {
                 },
                 {
                     path: '/blog',
-                    element: <Blog></Blog>
+                    element: <PrivateRouter><Blog></Blog></PrivateRouter>
                 },
                 {
                     path: '/login',

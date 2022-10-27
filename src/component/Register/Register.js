@@ -3,7 +3,7 @@ import { AuthContext } from '../../UserContext/UserContext';
 
 const Register = () => {
 
-    const { creatUser } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
 
     const handlSubmit = event => {
         event.preventDefault()
@@ -12,7 +12,7 @@ const Register = () => {
         const password = form.password.value;
         form.reset();
         console.log(email, password);
-        creatUser(email, password)
+        createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)

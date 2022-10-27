@@ -35,8 +35,8 @@ const Header = () => {
                     {/* <a className="btn">toggle</a> */}
                     <label className="swap">
                         <input type="checkbox" />
-                        <div className="swap-on">ON</div>
-                        <div className="swap-off">OFF</div>
+                        <div className="swap-on border p-3 mr-4 rounded bg-white text-black">Light</div>
+                        <div className="swap-off border p-3 mr-4 rounded bg-black text-white">Dark</div>
                     </label>
                 </div>
             </div>
