@@ -7,6 +7,7 @@ import Cart from '../Cart/Cart';
 import CartDetails from '../Cart/CartDetails';
 import Courses from '../Courses/Courses';
 import FAQ from '../FAQ/FAQ';
+import Home from '../Home/Home';
 import Register from '../Register/Register';
 import SignIn from '../SignIn/SignIn';
 
@@ -18,9 +19,13 @@ const Routers = () => {
             element: <Main></Main>,
             children: [
                 {
+                    path: '/',
+                    element: <Home></Home>
+                },
+                {
                     path: '/courses',
                     element: <Courses></Courses>,
-                    loader: () => fetch('http://localhost:5000/tutorial'),
+                    loader: () => fetch('https://assignment-10-server-cyan.vercel.app/tutorial'),
                     children: [
 
                     ]
@@ -31,7 +36,7 @@ const Routers = () => {
                 },
                 {
                     path: '/blog',
-                    element: <Blog></Blog>
+                    element: <PrivateRouter><Blog></Blog></PrivateRouter>
                 },
                 {
                     path: '/login',
@@ -44,7 +49,7 @@ const Routers = () => {
                 {
                     path: '/cartDetails',
                     element: <CartDetails></CartDetails>,
-                    loader: () => fetch('http://localhost:5000/tutorial')
+                    loader: () => fetch('https://assignment-10-server-cyan.vercel.app/tutorial')
                 }
                 // {
                 //     path: '/courses/:id',
