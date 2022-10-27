@@ -1,3 +1,37 @@
+# Websit name:-
+LEARN PROGRAMMING
+
+# Live site link:-
+-https://assignment-10-be849.web.app
+
+# Details in website:-
+1.this website name is LEARN PROGRAMMING
+2.use css framwork tailwind and daisy UI
+3.install 
+*react-router-dom 
+*firebase
+*tailwind
+*daisy UI
+*react icon
+*etc
+4.create login register page and toggle button
+5.creact many routers
+6.its helpfull for programmers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -2,7 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/UserContext';
 
 const SignIn = () => {
@@ -10,6 +10,7 @@ const SignIn = () => {
     const { signIn, googleSign, githubSign } = useContext(AuthContext);
     const provider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const navigate = useNavigate();
 
     const handlSubmit = event => {
         event.preventDefault()
@@ -23,6 +24,7 @@ const SignIn = () => {
                 const user = result.user;
                 setError('')
                 console.log(user)
+                navigate('/')
             })
             .catch(error => {
                 console.error(error);
@@ -72,7 +74,7 @@ const SignIn = () => {
                                 <br />
                                 <Link to='/register'>Please Register Now ?</Link>
                             </div>
-                            {error}
+                            <h1 className='text-red-600'>{error}</h1>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">SignIn</button>
                             </div>

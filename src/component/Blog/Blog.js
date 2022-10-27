@@ -8,7 +8,7 @@ const Blog = () => {
                     SOME QUESTION:
                 </span>
             </div>
-            <div className=' p-6 mx-36 my-10 text-center shadow-md rounded-md'>
+            <div className=' p-6 lg:mx-36 lg:my-10 text-center shadow-md rounded-md'>
                 <h1 className='text-3xl p-3 font-semibold text-pink-500'>
                     1: What is cors?
                 </h1>
@@ -16,7 +16,7 @@ const Blog = () => {
                     Cross-origin resource sharing ( CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served. [1] A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos. [2] Certain "cross-domain" requests, notably Ajax requests, are forbidden by default by the same-origin security policy.
                 </p>
             </div>
-            <div className=' p-6 mx-36 my-10 text-center shadow-md rounded-md'>
+            <div className=' p-6 lg:mx-36 lg:my-10 text-center shadow-md rounded-md'>
                 <h1 className='text-3xl p-3 font-semibold text-pink-500'>
                     2: Why are you using firebase? What other option do you have to implement authentication?
                 </h1>
@@ -25,7 +25,7 @@ const Blog = () => {
 
                 </p>
             </div>
-            <div className=' p-6 mx-36 my-10 text-center shadow-md rounded-md'>
+            <div className=' p-6  lg:mx-36 lg:my-10 text-center shadow-md rounded-md'>
                 <h1 className='text-3xl p-3 font-semibold text-pink-500'>
                     3: How does the private route work?
                 </h1>
@@ -33,7 +33,7 @@ const Blog = () => {
                     The react private route component renders a route component if the user is logged in and in an authorised role for the route, if the user isn’t logged in they’re redirected to the /login page, if the user is logged in but aren’t in an authorised role they’re redirected to the home page.
                 </p>
             </div>
-            <div className=' p-6 mx-36 my-10 text-center shadow-md rounded-md'>
+            <div className=' p-6 lg:mx-36 lg:my-10 text-center shadow-md rounded-md'>
                 <h1 className='text-3xl p-3 font-semibold text-pink-500'>
                     4: What is Node? How does Node work?
                 </h1>

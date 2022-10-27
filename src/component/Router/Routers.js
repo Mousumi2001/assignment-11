@@ -4,6 +4,7 @@ import Main from '../../layout/Main';
 import PrivateRouter from '../../PrivateRouter/PrivateRouter';
 import Blog from '../Blog/Blog';
 import Cart from '../Cart/Cart';
+import CartDetails from '../Cart/CartDetails';
 import Courses from '../Courses/Courses';
 import FAQ from '../FAQ/FAQ';
 import Register from '../Register/Register';
@@ -19,7 +20,10 @@ const Routers = () => {
                 {
                     path: '/courses',
                     element: <Courses></Courses>,
-                    loader: () => fetch('http://localhost:5000/tutorial')
+                    loader: () => fetch('http://localhost:5000/tutorial'),
+                    children: [
+
+                    ]
                 },
                 {
                     path: '/faq',
@@ -27,7 +31,7 @@ const Routers = () => {
                 },
                 {
                     path: '/blog',
-                    element: <PrivateRouter><Blog></Blog></PrivateRouter>
+                    element: <Blog></Blog>
                 },
                 {
                     path: '/login',
@@ -37,6 +41,11 @@ const Routers = () => {
                     path: '/register',
                     element: <Register></Register>
                 },
+                {
+                    path: '/cartDetails',
+                    element: <CartDetails></CartDetails>,
+                    loader: () => fetch('http://localhost:5000/tutorial')
+                }
                 // {
                 //     path: '/courses/:id',
                 //     element: <Cart></Cart>

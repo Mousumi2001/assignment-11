@@ -1,7 +1,14 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../UserContext/UserContext';
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
+
+    const { user } = useContext(AuthContext);
+
+
     return (
         <div>
             <div className="navbar bg-blue-200">
@@ -15,11 +22,11 @@ const Header = () => {
                             <li><Link to='/courses'>Courses</Link></li>
                             <li><Link to='/faq'>FAQ</Link></li>
                             <li><Link to='/blog'>Blog</Link></li>
-                            <li><Link to='/login'>login</Link></li>
-                            <li><Link to='/register'>Register</Link></li>
+                            {/* <li><Link to='/login'>login</Link></li>
+                            <li><Link to='/register'>Register</Link></li> */}
                         </ul>
                     </div>
-
+                    <img className='w-14 h-14 rounded-full' src='https://tse1.mm.bing.net/th?id=OIP.ZKz0Cs5Ffb9K70a43DzQigHaHa&pid=Api&P=0' />
                     <a className="btn btn-ghost normal-case text-xl">LEARN PROGRAMMING</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -32,11 +39,25 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {/* <a className="btn">toggle</a> */}
+                    {
+                        user.uid ?
+                            <span>{user.displayName}</span>
+                            :
+                            <>
+                                <Link to='/login'>SignIn</Link>
+                                <Link to='/register'>Register</Link>
+                            </>
+                    }
+
+                    {user?.photoURL ?
+                        <img className='rounded-full' style={{ height: '40px' }} roundedCircle src={user.photoURL} ></img>
+                        : <FaUser></FaUser>
+                    }
+
                     <label className="swap">
                         <input type="checkbox" />
-                        <div className="swap-on border p-3 mr-4 rounded bg-white text-black">Light</div>
-                        <div className="swap-off border p-3 mr-4 rounded bg-black text-white">Dark</div>
+                        <div className="swap-on border lg:p-3 lg:mr-4 rounded bg-white text-black">Light</div>
+                        <div className="swap-off border lg:p-3 lg:mr-4 rounded bg-black text-white">Dark</div>
                     </label>
                 </div>
             </div>
