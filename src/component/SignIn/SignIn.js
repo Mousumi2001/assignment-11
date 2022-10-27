@@ -2,6 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/UserContext';
 
 const SignIn = () => {
@@ -68,11 +69,12 @@ const SignIn = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" />
-
+                                <br />
+                                <Link to='/register'>Please Register Now ?</Link>
                             </div>
                             {error}
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button className="btn btn-primary">SignIn</button>
                             </div>
                             <button onClick={handlGoogle} className="btn btn-outline btn-info">SignIn With Google</button>
                             <button onClick={handlGithub} className="btn btn-outline btn-info">SignIn With Github</button>
