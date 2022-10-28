@@ -51,7 +51,7 @@ const Header = () => {
                                 <Link to='/register'>Register</Link>
                             </>
                     }
-                    <div className="tooltip tooltip-left" data-tip={user.displayName}>
+                    <div className="tooltip tooltip-left" data-tip='name'>
                         {user?.photoURL ?
                             <img className='rounded-full' style={{ height: '40px' }} roundedCircle src={user.photoURL} ></img>
                             : <FaUser></FaUser>
